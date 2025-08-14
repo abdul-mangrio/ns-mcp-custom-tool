@@ -1,0 +1,47 @@
+{
+    "tools": [{
+        "name": "add",
+        "description": "Add two numbers together",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "a": {
+              "type": "number",
+              "description": "First addend"
+            },
+            "b": {
+              "type": "number",
+              "description": "Second addend"
+            }
+          },
+          "required": ["a", "b"]
+        },
+        "annotations": {
+          "title": "Add Numbers",
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "reverseText",
+        "description": "Reverses a given text string. Example: if the user says 'Reverse the text: I like apples', call this tool with { \"text\": \"I like apples\" }. ",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string",
+              "description": "Text to reverse"
+            }
+          },
+          "required": ["text"]
+        },
+        "annotations": {
+          "title": "Reverse Text",
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        }
+      }
+    ]
+  }

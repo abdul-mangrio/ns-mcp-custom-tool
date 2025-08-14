@@ -1,0 +1,6 @@
+<tool scriptid="customtool_test1">
+  <exposeto3rdpartyagents>T</exposeto3rdpartyagents>
+  <name>Test Agent Tool 1</name>
+  <rpcschema>[/SuiteScripts/customtool/scriptfile_schema.json]</rpcschema>
+  <scriptfile>[/SuiteScripts/customtool/scriptfile.js]</scriptfile>
+</tool>
