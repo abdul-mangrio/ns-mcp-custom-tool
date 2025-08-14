@@ -1,47 +1,75 @@
 {
-    "tools": [{
-        "name": "add",
-        "description": "Add two numbers together",
-        "inputSchema": {
-          "type": "object",
-          "properties": {
-            "a": {
-              "type": "number",
-              "description": "First addend"
-            },
-            "b": {
-              "type": "number",
-              "description": "Second addend"
-            }
+  "tools": [
+    {
+      "name": "add",
+      "description": "Add two numbers together",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "type": "number",
+            "description": "First addend"
           },
-          "required": ["a", "b"]
+          "b": {
+            "type": "number",
+            "description": "Second addend"
+          }
         },
-        "annotations": {
-          "title": "Add Numbers",
-          "readOnlyHint": true,
-          "idempotentHint": true,
-          "openWorldHint": false
-        }
+        "required": [
+          "a",
+          "b"
+        ]
       },
-      {
-        "name": "reverseText",
-        "description": "Reverses a given text string. Example: if the user says 'Reverse the text: I like apples', call this tool with { \"text\": \"I like apples\" }. ",
-        "inputSchema": {
-          "type": "object",
-          "properties": {
-            "text": {
-              "type": "string",
-              "description": "Text to reverse"
-            }
-          },
-          "required": ["text"]
-        },
-        "annotations": {
-          "title": "Reverse Text",
-          "readOnlyHint": true,
-          "idempotentHint": true,
-          "openWorldHint": false
-        }
+      "annotations": {
+        "title": "Add Numbers",
+        "readOnlyHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
       }
-    ]
-  }
+    },
+    {
+      "name": "reverseText",
+      "description": "Reverses a given text string. Example: if the user says 'Reverse the text: I like apples', call this tool with { \"text\": \"I like apples\" }. ",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "Text to reverse"
+          }
+        },
+        "required": [
+          "text"
+        ]
+      },
+      "annotations": {
+        "title": "Reverse Text",
+        "readOnlyHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "createJournalEntry",
+      "description": "Create a Journal Entry in NetSuite.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "payload": {
+            "type": "string",
+            "description": "The payload to create a journal entry in NetSuite, this payload is a JSON object converted as string with the following properties: header=(subsidiary, currency, exchangeRate, tranDate, memo) and  array of objects lines=(account, debit or credit in each line, memo)"
+          }
+        },
+        "required": [
+          "payload"
+        ]
+      },
+      "annotations": {
+        "title": "Create Journal Entry",
+        "readOnlyHint": false,
+        "idempotentHint": false,
+        "openWorldHint": false
+      }
+    }
+  ]
+}
